@@ -1,17 +1,19 @@
-import { useState } from "react";
-import { CardProvider, useCard } from "./CardProvider";
-import Main from "./Main";
-import Header from "./Header";
-
-export const PRICE = (250).toFixed(2);
-export const OFFER = 50;
-export const CUR_PRICE = Math.round(PRICE * (OFFER / 100)).toFixed(2);
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage";
 
 export default function App() {
   return (
-    <CardProvider>
-      <Header />
-      <Main />
-    </CardProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="collections" element={<HomePage />} />
+        <Route path="women" element={<HomePage />} />
+        <Route path="men" element={<HomePage />} />
+        <Route path="about" element={<HomePage />} />
+        <Route path="contact" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
+// adding routers and links

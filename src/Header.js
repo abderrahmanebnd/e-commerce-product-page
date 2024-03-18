@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { CUR_PRICE } from "./App";
+import { CUR_PRICE } from "./HomePage";
 import { useCard } from "./CardProvider";
+import { Link } from "react-router-dom";
 
 export function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 767);
@@ -29,9 +30,9 @@ export default function Header() {
         className="menu"
         onClick={() => setIsNavOpen((n) => !n)}
       />
-      <a href="/">
+      <Link to="/">
         <img src="images/logo.svg" alt="logo" className="logo" />
-      </a>
+      </Link>
       <NavBar setIsNavOpen={setIsNavOpen} isOpen={isNavOpen} />
       <Card />
       <img src="images/image-avatar.png" alt="avatar" className="avatar" />
@@ -49,19 +50,19 @@ function NavBar({ setIsNavOpen, isOpen }) {
           <img src="images/icon-close.svg" alt="close" />
         </li>
         <li>
-          <a href="/collections">Collections</a>
+          <Link to="/collections">Collections</Link>
         </li>
         <li>
-          <a href="/men">Men</a>
+          <Link to="/men">Men</Link>
         </li>
         <li>
-          <a href="/women">Women</a>
+          <Link to="/women">Women</Link>
         </li>
         <li>
-          <a href="/about">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </nav>
@@ -72,19 +73,19 @@ function NavBar({ setIsNavOpen, isOpen }) {
           <img src="images/icon-close.svg" alt="close" />
         </li>
         <li>
-          <a href="/collections">Collections</a>
+          <Link to="/collections">Collections</Link>
         </li>
         <li>
-          <a href="/men">Men</a>
+          <Link to="/men">Men</Link>
         </li>
         <li>
-          <a href="/women">Women</a>
+          <Link to="/women">Women</Link>
         </li>
         <li>
-          <a href="/about">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </nav>

@@ -1,5 +1,5 @@
 import { useCard } from "./CardProvider";
-import { PRICE, OFFER, CUR_PRICE } from "./App";
+import { PRICE, OFFER, CUR_PRICE } from "./HomePage";
 
 export default function Main() {
   const { showLightBox } = useCard();
@@ -13,8 +13,7 @@ export default function Main() {
 }
 
 function Photos() {
-  const { currentImg, handleChangeImg } = useCard();
-  const { handleShowLightBox } = useCard();
+  const { currentImg, handleChangeImg, handleShowLightBox } = useCard();
 
   return (
     <section className="photos">
@@ -62,7 +61,8 @@ function Details() {
 }
 
 function LightBox() {
-  const { currentImg, handleChangeImg, handleShowLightBox } = useCard();
+  const { currentImg, handleChangeImg, handleShowLightBox, showLightBox } =
+    useCard();
   return (
     <div className="light-box">
       <div>
@@ -79,12 +79,17 @@ function LightBox() {
             className="prev"
             onClick={() => handleChangeImg(currentImg - 1)}
           />
-          <img src={`images/image-product-${currentImg}.jpg`} alt="pic" />
           <img
             src="images/icon-next.svg"
             alt="next"
             className="next"
             onClick={() => handleChangeImg(currentImg + 1)}
+          />
+
+          <img
+            className="showed-img"
+            src={`images/image-product-${currentImg}.jpg`}
+            alt="pic"
           />
         </div>
         <ul className="thumbns">

@@ -116,7 +116,7 @@ nav {
   width: 0%;
   height: 5px;
   position:absolute; 
-  bottom: -35px;
+  bottom: -27px;
   left: 0;
   transform: scale(1);
   background-color: var(--Orange);
@@ -353,10 +353,18 @@ nav {
   transform: translate(-50%,-50%);
   cursor: pointer;
 }
+
+.light-box .prev {
+  transform: translate(-50%, -50%);
+}
+.light-box .next {
+  right: 0;
+  transform: translate(50%, -50%);
+}
 .light-box div {
   width: 400px;
 }
-.light-box img:nth-child(3) {
+.light-box img.showed-img {
   cursor: auto;
 }
 
